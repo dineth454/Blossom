@@ -1,0 +1,86 @@
+stack programming problems:
+• reverse letters in a string, reverse words in a line, or reverse 
+a list of numbers
+• find out whether a string is a palindrome
+• examine a file to see if its braces { } and other operators 
+match
+• convert infix expressions to postfix or prefix
+
+STACK APPLICATION 
+• Describe, how to add 592 and 3784 using 
+Stacks
+
+STACK APPLICATIONS 
+• Write a pseudo code Algorithm to convert 
+Decimal to Binary using a Stack
+
+Converting Decimal to Binary: Consider the following pseudo code 
+1) Read (number)
+2) Loop (number > 0)
+1) digit = number modulo 2
+2) print (digit)
+3) number = number / 2
+The problem with this code is that it will print the binary
+number backwards. (ex: 19 becomes 11001instead of 10011. )
+To remedy this problem, instead of printing the digit right away, 
+we can push it onto the stack. Then after the number is done 
+being converted, we pop the digit out of the stack and print it.
+
+Finding Palindromes
+• Problem: Write a program that reads a string 
+and determines whether it is a palindrome
+
+Balanced Parentheses
+• When analyzing arithmetic expressions, it is 
+important to determine whether an expression is 
+balanced with respect to parentheses
+( a + b * ( c / ( d – e ) ) ) + ( d / e )
+• The problem is further complicated if braces or 
+brackets are used in conjunction with 
+parentheses
+• The solution is to use stacks!
+
+• Basic Algorithm
+1. Make an empty stack
+2. Read symbols until the end of the file
+a) If symbol is opening symbol, push it 
+into the stack
+b) If it is closing symbol and if the stack 
+is empty, then report an error.
+c Otherwise, pop the stack, if the symbol 
+popped is not in the corresponding 
+opening symbol , then report an 
+error
+3. At the end of the file, if the stack is not 
+empty, report an error.
+Note : we should not consider a parenthesis 
+as a symbol if it occurs inside a comment, 
+string, constant or character string.
+
+
+Evaluating a postfix expression
+• Initialise an empty stack
+• While token remain in the input stream
+–Read next token
+–If token is a number, push it into the stack
+–Else, if token is an operator, pop top two tokens 
+off the stack,apply the operator, and push the 
+answer back into the stack
+• Pop the answer off the stack.
+Evaluate- 623+-382/+*2^3+
+Symbol opnd1 opnd2 value opndstk
+6 6 2 6,2
+3 6,2,3
++ 2 3 5 6,5
+- 6 5 1 1
+3 6 5 1 1,3
+Evaluate- 623+-382/+*2^3+
+Symbol opnd1 opnd2 value opndstk
+8 6 5 1 1,3,8
+2 6 5 1 1,3,8,2
+/ 8 2 4 1,3,4
++ 3 4 7 1,7
+* 1 7 7 7 2 1 7 7 7,2
+^ 7 2 49 49
+3 7 2 49 49,3
++ 49 3 52 52
